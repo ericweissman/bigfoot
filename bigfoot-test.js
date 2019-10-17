@@ -8,7 +8,7 @@ describe('Bigfoot', function() {
       assert.isFunction(Bigfoot);
       assert.isObject(bigfoot);
     });
-    
+
     it.skip('should have a name', function() {
       var bigfoot = new Bigfoot('Harry');
       assert.equal(bigfoot.name, 'Harry');
@@ -40,6 +40,25 @@ describe('Bigfoot', function() {
       };
     };
 
+    it.skip('should feel some type of way after getting a haircut and have a brand new style', function() {
+      var bigfoot = new Bigfoot('Young Ders', 'hotdog juice');
+      assert.equal(bigfoot.mood, 'meh');
+      bigfoot.makeover('combover', 'weak sauce');
+      assert.equal(bigfoot.hair, 'combover');
+      assert.equal(bigfoot.mood, 'weak sauce');
+      bigfoot.makeover('mullet', 'extreme');
+      assert.equal(bigfoot.mood, 'extreme');
+      assert.equal(bigfoot.hair, 'mullet');
+    });
+
+    it.skip('should be able to steal clothes to complete its look', function() {
+      var bigfoot = new Bigfoot('Fluff McCutcheon', 'baby kittens');
+      var rackOfClothes = ['jorts', 'throwback jersey', 'tophat', 'tube socks'];
+      assert.deepEqual(bigfoot.wardrobe, []);
+      bigfoot.shoppingSpree(rackOfClothes);
+      assert.deepEqual(bigfoot.wardrobe.length, 4);
+      assert.deepEqual(bigfoot.wardrobe[0], 'tube socks');
+    });
 
     it.skip('should feel content if it eats over 10000 calories', function() {
       var bigfoot = new Bigfoot('Big Country', 'old folks home');
@@ -59,23 +78,4 @@ describe('Bigfoot', function() {
       assert.equal(bigfoot.appetite, 'queasy :(');
     });
 
-    it.skip('should feel some type of way after getting a haircut and have a brand new style', function() {
-      var bigfoot = new Bigfoot('Young Ders', 'hotdog juice');
-      assert.equal(bigfoot.mood, 'meh');
-      bigfoot.makeover('combover', 'weak sauce');
-      assert.equal(bigfoot.hair, 'combover');
-      assert.equal(bigfoot.mood, 'weak sauce');
-      bigfoot.makeover('mullet', 'extreme');
-      assert.equal(bigfoot.mood, 'extreme');
-      assert.equal(bigfoot.hair, 'mullet');
-    });
-
-    it.skip('should be able to steal clothes to complete its look', function() {
-      var bigfoot = new Bigfoot('Fluff McCutcheon', 'baby kittens');
-      var rackOfClothes = ['jorts', 'throwback jersey', 'tophat', 'tube socks'];
-      assert.deepEqual(bigfoot.wardrobe, []);
-      bigfoot.shoppingSpree(rackOfClothes);
-      assert.deepEqual(bigfoot.wardrobe.length, 4);
-      assert.deepEqual(bigfoot.wardrobe[0], 'tube socks');
-    })
   });
